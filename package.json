@@ -1,0 +1,23 @@
+{
+  "name": "friend_finder",
+  "version": "1.0.0",
+  "description": "App to match similar people to be friends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonhadi/Friend_Finder.git"
+  },
+  "author": "JonHadi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonhadi/Friend_Finder/issues"
+  },
+  "homepage": "https://github.com/jonhadi/Friend_Finder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
+}
