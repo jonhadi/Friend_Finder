@@ -15,25 +15,32 @@ router.post('/api/friends', function(req, res){
     console.log(req.body);
     var newProfile = req.body;
 
-    matchProfile(newProfile);
-    profiles.push(newProfile);
-
+    var bestMatch = matchProfile(newProfile);
+    profiles.push(newProfile);  
+    res.json(bestMatch);
 })
 
 function matchProfile(profile) {
-    var bestScore = 51, bestMatch;
+    var bestScore = 51;
+    var bestMatch = {
+        name: "",
+        imgULR: "",
+    }
 
     for (var i = 0; i < profiles.length; i++) {
-        var difference;
+        var difference = 0;
         for (var j = 0; j < profiles[i].scores.length; j++) {
-            difference = Math.abs(profiles[i].scores[j] - profile.scores[j]);
+            difference += Math.abs(profiles[i].scores[j] - profile.scores[j]);
         }
+        //console.log(difference);
         if (difference < bestScore) {
             bestScore = difference;
-            bestMatch = profiles[i].name;
+            bestMatch.name = profiles[i].name;
+            bestMatch.imgURL = profiles[i].imgURL;
         }
     }
-    console.log('Your best match is ' + bestMatch);
+    console.log('Your best match is ' + bestMatch.name);
+    return bestMatch;
 }
 
 module.exports = router;
