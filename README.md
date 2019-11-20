@@ -1,2 +1,3 @@
 # Friend_Finder
-An app to help people make friends
+A survery to match you with a Gamer that likes to play games the way you want! https://bit.ly/343QRfI
+
